@@ -30,7 +30,7 @@ def  inverseDepth(u,v,q_r,q_i,q_j,q_k,x,y,z):
     hw_ = np.array([[((param.Cu - u)*(param.Fu))],[((param.Cv - v)*(param.Fv))],[1]])  # there is some ambiguity with the concept of Fu and Fv. we are supposed to use (f/du) and (f/dv) here. not sure if these are same!
     hw = np.dot(q2r,hw_)
     
-    inverseDepth = np.array([[math.atan(hw[0]/hw[1])],
+    inverseDepth = np.array([[math.atan(hw[0]/hw[1])], #inverse depth estimation
                              [math.atan((-hw[1])/(math.sqrt((hw[0])**2 + (hw[2])**2)))],
                              [param.INITIAL_DEPTH_ESTIMATE]])
                     
