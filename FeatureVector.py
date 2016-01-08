@@ -42,7 +42,7 @@ def stateVectorUpdate(stateVec,del_t):
     transition_quat = getTransitionQuat(stateVec[10:13],del_t)
     
                                 
-    result_quat = trnsfrm.quaternion_multiply(stateVec[3:7],transition_quat)
+    result_quat = trnsfrm.quaternion_multiply(stateVec[3:7],transition_quat) #quaternion multiplication
     
     return np.array([   [stateVec[0] + (stateVec[7]*del_t)],             #0
                         [stateVec[1] + (stateVec[8]*del_t)],             #1
